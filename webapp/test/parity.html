@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+  <title>Browser parity test</title>
+  <script src="vendor/onnxruntime-web/ort.min.js"></script>
+</head>
+<body>
+  <p>Runs the deployed models in this browser on the exported test inputs (scripts/parity_check.py).</p>
+  <pre id="out">running…</pre>
+  <script type="module">
+    // Same Classifier the app uses, so this tests the real in-browser code path.
+    import { Classifier } from "./classifier.js";
+    ort.env.wasm.wasmPaths = new URL("vendor/onnxruntime-web/", document.baseURI).href;
+    ort.env.wasm.numThreads = self.crossOriginIsolated ? Math.min(4, navigator.hardwareConcurrency || 1) : 1;
+    const out = document.getElementById("out");
+
+    async function canvasFrom(url) {
+      const img = new Image();
+      img.src = url;
+      await img.decode();
+      const c = document.createElement("canvas");
+      c.width = c.height = 224;
+      c.getContext("2d", { willReadFrequently: true }).drawImage(img, 0, 0);
+      return c;
+    }
+
+    try {
+      const manifest = await (await fetch("test/data/manifest.json")).json();
+      const results = {};
+      for (const key of ["A", "B", "C"]) {
+        const clf = await Classifier.load(key, 3);
+        results[key] = {};
+        for (const item of manifest) {
+          const crops = [];
+          for (let i = 0; i < item.frames; i++) crops.push(await canvasFrom(`test/data/${item.id}/${i}.png`));
+          const t0 = performance.now();
+          const probs = await clf.predict(crops, item.summary);
+          results[key][item.clip] = { probs, ms: performance.now() - t0 };
+          out.textContent = `${key}: ${Object.keys(results[key]).length} / ${manifest.length}`;
+        }
+      }
+      results.userAgent = navigator.userAgent;
+      results.isolated = self.crossOriginIsolated;
+      results.threads = ort.env.wasm.numThreads;
+      window.__done = results;
+      out.textContent = "done";
+    } catch (e) {
+      window.__done = { error: String(e && e.stack || e) };
+      out.textContent = "error: " + e;
+    }
+  </script>
+</body>
+</html>

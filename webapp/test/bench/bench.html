@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><base href="/"><title>Model speed bench</title>
+<script src="vendor/onnxruntime-web/ort.min.js"></script></head>
+<body><pre id="out">running…</pre>
+<script type="module">
+  ort.env.wasm.wasmPaths = new URL("vendor/onnxruntime-web/", document.baseURI).href;
+  ort.env.wasm.numThreads = self.crossOriginIsolated ? Math.min(4, navigator.hardwareConcurrency || 1) : 1;
+  const models = new URLSearchParams(location.search).get("m").split(",");
+  const res = {};
+  try {
+    for (const m of models) {
+      const s = await ort.InferenceSession.create(m, { executionProviders: ["wasm"] });
+      const x = new ort.Tensor("float32", Float32Array.from({ length: 3 * 224 * 224 }, () => Math.random()), [1, 3, 224, 224]);
+      for (let i = 0; i < 3; i++) await s.run({ [s.inputNames[0]]: x });
+      const t = [];
+      for (let i = 0; i < 25; i++) { const t0 = performance.now(); await s.run({ [s.inputNames[0]]: x }); t.push(performance.now() - t0); }
+      t.sort((a, b) => a - b);
+      res[m] = { median: t[12], p95: t[23] };
+    }
+    window.__done = { res, threads: ort.env.wasm.numThreads, isolated: self.crossOriginIsolated };
+  } catch (e) { window.__done = { error: String(e) }; }
+  document.getElementById("out").textContent = JSON.stringify(window.__done, null, 1);
+</script></body></html>

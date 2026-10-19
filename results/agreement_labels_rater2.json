@@ -1,0 +1,32 @@
+{
+  "file": "labels_rater2.csv",
+  "n_decided": 25,
+  "n_both_usable": 19,
+  "agreement": 0.631578947368421,
+  "kappa_3class": 0.41150442477876104,
+  "kappa_2class": 0.26519337016574596,
+  "confusion": [
+    [
+      6,
+      0,
+      3
+    ],
+    [
+      1,
+      4,
+      0
+    ],
+    [
+      3,
+      0,
+      2
+    ]
+  ],
+  "classes": [
+    "correct_form",
+    "knee_valgus",
+    "trunk_lean"
+  ],
+  "contact_median_abs_diff": 30.0,
+  "flex_median_abs_diff": 31.0
+}

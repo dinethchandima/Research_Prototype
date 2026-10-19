@@ -1,0 +1,155 @@
+{
+  "summary": {
+    "A_ResNet50": {
+      "acc_mean": 0.5746801346801347,
+      "acc_sd": 0.07478174359294357,
+      "f1_mean": 0.541433631819326,
+      "f1_sd": 0.13224681934941618,
+      "pooled_acc": 0.5714285714285714,
+      "pooled_f1": 0.5696939033645332,
+      "pooled_confusion": [
+        [
+          32,
+          29
+        ],
+        [
+          25,
+          40
+        ]
+      ]
+    },
+    "B_CNN_Transformer": {
+      "acc_mean": 0.6463030303030303,
+      "acc_sd": 0.14005686311502868,
+      "f1_mean": 0.614724643172919,
+      "f1_sd": 0.16479410812322026,
+      "pooled_acc": 0.6428571428571429,
+      "pooled_f1": 0.6401142494446208,
+      "pooled_confusion": [
+        [
+          35,
+          26
+        ],
+        [
+          19,
+          46
+        ]
+      ]
+    },
+    "C_XGBoost": {
+      "acc_mean": 0.6585319865319865,
+      "acc_sd": 0.06147094071412318,
+      "f1_mean": 0.6436219441478063,
+      "f1_sd": 0.07037966090011154,
+      "pooled_acc": 0.6587301587301587,
+      "pooled_f1": 0.6561091716915266,
+      "pooled_confusion": [
+        [
+          36,
+          25
+        ],
+        [
+          18,
+          47
+        ]
+      ]
+    },
+    "R_angle_rule": {
+      "acc_mean": 0.6546666666666667,
+      "acc_sd": 0.10987510055926274,
+      "f1_mean": 0.6366064990754593,
+      "f1_sd": 0.11209902281408807,
+      "pooled_acc": 0.6587301587301587,
+      "pooled_f1": 0.6489795918367347,
+      "pooled_confusion": [
+        [
+          52,
+          9
+        ],
+        [
+          34,
+          31
+        ]
+      ]
+    }
+  },
+  "mcnemar": {
+    "A_ResNet50 vs B_CNN_Transformer": {
+      "only_first_correct": 20,
+      "only_second_correct": 29,
+      "p_value": 0.2528697301676033
+    },
+    "A_ResNet50 vs C_XGBoost": {
+      "only_first_correct": 16,
+      "only_second_correct": 27,
+      "p_value": 0.12628947438543037
+    },
+    "B_CNN_Transformer vs C_XGBoost": {
+      "only_first_correct": 23,
+      "only_second_correct": 25,
+      "p_value": 0.8854334972865135
+    }
+  },
+  "per_fold": [
+    {
+      "fold": 1,
+      "n_test": 27,
+      "A_ResNet50_acc": 0.4444444444444444,
+      "A_ResNet50_f1": 0.3076923076923077,
+      "B_CNN_Transformer_acc": 0.7777777777777778,
+      "B_CNN_Transformer_f1": 0.775,
+      "C_XGBoost_acc": 0.6296296296296297,
+      "C_XGBoost_f1": 0.6164772727272727,
+      "R_angle_rule_acc": 0.7037037037037037,
+      "R_angle_rule_f1": 0.6823529411764706
+    },
+    {
+      "fold": 2,
+      "n_test": 25,
+      "A_ResNet50_acc": 0.6,
+      "A_ResNet50_f1": 0.5833333333333333,
+      "B_CNN_Transformer_acc": 0.56,
+      "B_CNN_Transformer_f1": 0.548440065681445,
+      "C_XGBoost_acc": 0.6,
+      "C_XGBoost_f1": 0.5993589743589745,
+      "R_angle_rule_acc": 0.64,
+      "R_angle_rule_f1": 0.5989304812834224
+    },
+    {
+      "fold": 3,
+      "n_test": 22,
+      "A_ResNet50_acc": 0.6363636363636364,
+      "A_ResNet50_f1": 0.6333333333333333,
+      "B_CNN_Transformer_acc": 0.8181818181818182,
+      "B_CNN_Transformer_f1": 0.7904761904761906,
+      "C_XGBoost_acc": 0.6363636363636364,
+      "C_XGBoost_f1": 0.5809523809523809,
+      "R_angle_rule_acc": 0.5,
+      "R_angle_rule_f1": 0.4905263157894737
+    },
+    {
+      "fold": 4,
+      "n_test": 25,
+      "A_ResNet50_acc": 0.6,
+      "A_ResNet50_f1": 0.5993589743589745,
+      "B_CNN_Transformer_acc": 0.52,
+      "B_CNN_Transformer_f1": 0.40476190476190477,
+      "C_XGBoost_acc": 0.76,
+      "C_XGBoost_f1": 0.7564935064935066,
+      "R_angle_rule_acc": 0.8,
+      "R_angle_rule_f1": 0.7947454844006567
+    },
+    {
+      "fold": 5,
+      "n_test": 27,
+      "A_ResNet50_acc": 0.5925925925925926,
+      "A_ResNet50_f1": 0.5834502103786816,
+      "B_CNN_Transformer_acc": 0.5555555555555556,
+      "B_CNN_Transformer_f1": 0.554945054945055,
+      "C_XGBoost_acc": 0.6666666666666666,
+      "C_XGBoost_f1": 0.6648275862068966,
+      "R_angle_rule_acc": 0.6296296296296297,
+      "R_angle_rule_f1": 0.6164772727272727
+    }
+  ]
+}

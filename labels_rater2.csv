@@ -1,0 +1,26 @@
+clip,category,group,usable,exclude_reason,contact_frame,max_flexion_frame,knee_angle,trunk_angle,label,both_flag,annotator
+v_JumpRope_g22_c06.avi,JumpRope,JumpRope_g22,yes,,92,97,-0.2,1.9,correct_form,no,R2
+v_JumpRope_g14_c04.avi,JumpRope,JumpRope_g14,yes,,60,63,7.9,4.1,trunk_lean,no,R2
+v_JumpRope_g11_c01.avi,JumpRope,JumpRope_g11,yes,,167,172,1.9,2.2,correct_form,no,R2
+v_JumpRope_g09_c07.avi,JumpRope,JumpRope_g09,no,no clear landing,,,,,,,R2
+v_JumpRope_g25_c06.avi,JumpRope,JumpRope_g25,yes,,253,256,8.7,1.8,trunk_lean,no,R2
+v_JumpingJack_g20_c03.avi,JumpingJack,JumpingJack_g20,yes,,62,72,3.9,4.3,correct_form,no,R2
+v_JumpRope_g24_c02.avi,JumpRope,JumpRope_g24,yes,,270,275,9.6,4.9,correct_form,no,R2
+v_JumpingJack_g02_c01.avi,JumpingJack,JumpingJack_g02,yes,,13,18,6.5,3.5,correct_form,no,R2
+v_JumpingJack_g25_c05.avi,JumpingJack,JumpingJack_g25,yes,,40,44,13.4,1.5,knee_valgus,no,R2
+v_JumpingJack_g22_c04.avi,JumpingJack,JumpingJack_g22,no,side view (knees not separately visible),,,,,,,R2
+v_JumpingJack_g17_c03.avi,JumpingJack,JumpingJack_g17,yes,,51,55,7.1,1.2,trunk_lean,no,R2
+v_JumpRope_g16_c01.avi,JumpRope,JumpRope_g16,yes,,9,13,5.9,1.2,correct_form,no,R2
+v_JumpingJack_g23_c02.avi,JumpingJack,JumpingJack_g23,yes,,38,43,21.0,2.1,trunk_lean,yes,R2
+v_JumpingJack_g15_c03.avi,JumpingJack,JumpingJack_g15,yes,,36,41,16.7,0.8,knee_valgus,no,R2
+v_JumpingJack_g13_c05.avi,JumpingJack,JumpingJack_g13,yes,,45,50,7.2,1.0,knee_valgus,no,R2
+v_JumpRope_g08_c06.avi,JumpRope,JumpRope_g08,yes,,155,160,5.3,5.5,trunk_lean,no,R2
+v_JumpRope_g08_c05.avi,JumpRope,JumpRope_g08,yes,,195,199,7.1,5.9,correct_form,no,R2
+v_JumpRope_g22_c01.avi,JumpRope,JumpRope_g22,yes,,80,85,-3.7,3.4,correct_form,no,R2
+v_JumpRope_g25_c05.avi,JumpRope,JumpRope_g25,no,no clear landing,,,,,,,R2
+v_JumpingJack_g25_c07.avi,JumpingJack,JumpingJack_g25,yes,,41,44,9.8,1.8,knee_valgus,no,R2
+v_JumpRope_g09_c01.avi,JumpRope,JumpRope_g09,no,no clear landing,,,,,,,R2
+v_JumpRope_g25_c01.avi,JumpRope,JumpRope_g25,no,no clear landing,,,,,,,R2
+v_JumpRope_g03_c02.avi,JumpRope,JumpRope_g03,yes,,196,200,5.6,1.7,correct_form,no,R2
+v_JumpingJack_g22_c01.avi,JumpingJack,JumpingJack_g22,no,side view (knees not separately visible),,,,,,,R2
+v_JumpRope_g14_c01.avi,JumpRope,JumpRope_g14,yes,,11,14,5.7,0.7,correct_form,no,R2

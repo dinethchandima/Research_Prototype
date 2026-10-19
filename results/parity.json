@@ -1,0 +1,61 @@
+{
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+  "cross_origin_isolated": true,
+  "wasm_threads": 4,
+  "models": {
+    "ResNet50 CNN": {
+      "test": {
+        "n": 17,
+        "agree": 17,
+        "agreement_pct": 100.0,
+        "max_prob_diff": 2.9802322387695312e-08,
+        "mean_prob_diff": 1.753077787511489e-09
+      },
+      "all": {
+        "n": 126,
+        "agree": 126,
+        "agreement_pct": 100.0,
+        "max_prob_diff": 2.9802322387695312e-08,
+        "mean_prob_diff": 8.899225201550132e-10
+      },
+      "browser_ms_median": 148.75750000029802,
+      "browser_ms_p95": 194.84000000171363
+    },
+    "CNN-Transformer": {
+      "test": {
+        "n": 17,
+        "agree": 17,
+        "agreement_pct": 100.0,
+        "max_prob_diff": 1.1920928955078125e-07,
+        "mean_prob_diff": 3.4609590383136976e-08
+      },
+      "all": {
+        "n": 126,
+        "agree": 126,
+        "agreement_pct": 100.0,
+        "max_prob_diff": 2.980232238769531e-07,
+        "mean_prob_diff": 1.5396619259956337e-08
+      },
+      "browser_ms_median": 1150.695000000298,
+      "browser_ms_p95": 1522.9975000014529
+    },
+    "XGBoost (selected)": {
+      "test": {
+        "n": 17,
+        "agree": 17,
+        "agreement_pct": 100.0,
+        "max_prob_diff": 9.27958537788598e-08,
+        "mean_prob_diff": 5.712815692604185e-08
+      },
+      "all": {
+        "n": 126,
+        "agree": 126,
+        "agreement_pct": 100.0,
+        "max_prob_diff": 1.795645762081577e-07,
+        "mean_prob_diff": 4.7203347705023245e-08
+      },
+      "browser_ms_median": 141.21000000089407,
+      "browser_ms_p95": 156.82999999821186
+    }
+  }
+}

@@ -1,0 +1,467 @@
+{
+  "n": 50,
+  "single": {
+    "A1": {
+      "question": "A1. What is your role?",
+      "counts": {
+        "Athlete": 24,
+        "Coach or trainer": 17,
+        "Both athlete and coach": 9
+      },
+      "n": 50
+    },
+    "A2": {
+      "question": "A2. What is your age group?",
+      "counts": {
+        "25–34": 21,
+        "18–24": 13,
+        "35–44": 9,
+        "45 or above": 7
+      },
+      "n": 50
+    },
+    "A3": {
+      "question": "A3. How many years of experience do you have with plyometric (jump) training?",
+      "counts": {
+        "1–3 years": 18,
+        "4–7 years": 14,
+        "More than 7 years": 14,
+        "Less than 1 year": 4
+      },
+      "n": 50
+    },
+    "A4": {
+      "question": "A4. How often do you (or your athletes) perform plyometric exercises, such as box jumps or depth jumps?",
+      "counts": {
+        "Weekly": 20,
+        "More than once a week": 20,
+        "Monthly": 10
+      },
+      "n": 50
+    },
+    "A5": {
+      "question": "A5. What is your main sport or training setting?",
+      "counts": {
+        "Gym or fitness training": 13,
+        "Football": 9,
+        "Basketball": 8,
+        "Athletics (track and field)": 7,
+        "Volleyball": 7,
+        "Rugby": 4,
+        "CrossFit": 1,
+        "Netball": 1
+      },
+      "n": 50
+    },
+    "B1": {
+      "question": "B1. How is plyometric technique currently monitored in your training?",
+      "counts": {
+        "A coach watches in person": 14,
+        "Technique is not monitored": 8,
+        "Self-monitoring without feedback": 6,
+        "A coach watches in person, Self-monitoring without feedback": 5,
+        "Video recorded and reviewed later": 4,
+        "A coach watches in person, Video recorded and reviewed later": 3,
+        "Wearable sensors (e.g., IMU or GPS)": 2,
+        "A coach watches in person, Video recorded and reviewed later, Self-monitoring without feedback": 2,
+        "Video recorded and reviewed later, Self-monitoring without feedback": 2,
+        "Wearable sensors (e.g., IMU or GPS), Self-monitoring without feedback": 1,
+        "Video recorded and reviewed later, Force plates or laboratory motion capture, Self-monitoring without feedback": 1,
+        "Force plates or laboratory motion capture": 1,
+        "Video recorded and reviewed later, Wearable sensors (e.g., IMU or GPS)": 1
+      },
+      "n": 50
+    },
+    "B3": {
+      "question": "B3. Have you (or an athlete you coach) been injured during plyometric training in the past 12 months?",
+      "counts": {
+        "No": 35,
+        "Yes": 10,
+        "Prefer not to say": 5
+      },
+      "n": 50
+    },
+    "D1": {
+      "question": "D1. Which device would you most likely use with this tool during training?",
+      "counts": {
+        "Smartphone": 27,
+        "Laptop": 14,
+        "Tablet": 7,
+        "Desktop computer with webcam": 2
+      },
+      "n": 50
+    },
+    "D4": {
+      "question": "D4. Who should see the feedback during a session?",
+      "counts": {
+        "Both": 31,
+        "Athlete only": 13,
+        "Coach only": 6
+      },
+      "n": 50
+    },
+    "D5": {
+      "question": "D5. When should feedback be given?",
+      "counts": {
+        "During each repetition": 26,
+        "After each set": 21,
+        "After the whole session": 3
+      },
+      "n": 50
+    },
+    "D6": {
+      "question": "D6. How would you like to give video to the tool?",
+      "counts": {
+        "Live camera during training": 26,
+        "Both": 21,
+        "Upload a recorded video": 3
+      },
+      "n": 50
+    },
+    "D7": {
+      "question": "D7. Should the tool save your session history so progress can be tracked over time?",
+      "counts": {
+        "Yes": 32,
+        "No": 9,
+        "Not sure": 9
+      },
+      "n": 50
+    },
+    "D8": {
+      "question": "D8. Do you need to check more than one athlete in the same session?",
+      "counts": {
+        "Not applicable (I am an athlete only)": 24,
+        "Yes": 17,
+        "No": 9
+      },
+      "n": 50
+    },
+    "D9": {
+      "question": "D9. Where would the camera usually be placed during training?",
+      "counts": {
+        "On a stand or tripod": 17,
+        "Leaning against equipment or a wall": 16,
+        "Held by another person": 11,
+        "Not sure": 6
+      },
+      "n": 50
+    },
+    "D10": {
+      "question": "D10. How much setup time before a session would you accept?",
+      "counts": {
+        "Less than 1 minute": 24,
+        "1–3 minutes": 18,
+        "3–5 minutes": 7,
+        "More than 5 minutes": 1
+      },
+      "n": 50
+    },
+    "D11": {
+      "question": "D11. Should the tool show how confident it is in each result (for example, \"Knee valgus, 94%\")?",
+      "counts": {
+        "Yes": 26,
+        "Not sure": 16,
+        "No": 8
+      },
+      "n": 50
+    },
+    "D12": {
+      "question": "D12. Would you be more willing to use the tool if your video never left your device?",
+      "counts": {
+        "Yes": 40,
+        "No preference": 6,
+        "No": 4
+      },
+      "n": 50
+    },
+    "D13": {
+      "question": "D13. Which type of tool would you prefer?",
+      "counts": {
+        "Camera and browser only": 35,
+        "Wearable sensors": 8,
+        "No preference": 7
+      },
+      "n": 50
+    }
+  },
+  "multi": {
+    "B4": {
+      "question": "B4. Which body area was affected?",
+      "counts": {
+        "Knee": 6,
+        "Ankle": 3,
+        "Hamstring": 3,
+        "Hip or groin": 1,
+        "Lower back": 1
+      },
+      "n": 10
+    },
+    "B5": {
+      "question": "B5. Which challenges do you face in correcting plyometric technique?",
+      "counts": {
+        "Errors happen too fast to see": 36,
+        "Feedback comes too late to correct the movement": 19,
+        "A coach is not available at every session": 16,
+        "Specialised equipment is too expensive": 14,
+        "I am unsure what correct technique looks like": 5
+      },
+      "n": 50
+    },
+    "D2": {
+      "question": "D2. Which posture problems should the tool detect?",
+      "counts": {
+        "Knees caving inward (knee valgus)": 44,
+        "Uneven landing between legs": 29,
+        "Leaning the trunk too far (trunk lean)": 26,
+        "Too little knee bend on landing": 24,
+        "Landing on heels": 3
+      },
+      "n": 50
+    },
+    "D3": {
+      "question": "D3. Which types of feedback would be most useful?",
+      "counts": {
+        "Spoken (audio) cue": 31,
+        "Summary after the session": 30,
+        "Score for each repetition": 25,
+        "Skeleton overlay on the video": 23,
+        "On-screen text cue": 10
+      },
+      "n": 50
+    }
+  },
+  "likert": {
+    "B2.1": {
+      "question": "B2. Please indicate how much you agree with each statement. [B2.1 Technique errors such as the knees caving inward are noticed during my training sessions.]",
+      "mean": 3.46,
+      "sd": 1.1286618408630673,
+      "agree_pct": 0.52,
+      "n": 50
+    },
+    "B2.2": {
+      "question": "B2. Please indicate how much you agree with each statement. [B2.2 Technique errors during fast jumping movements are difficult to see with the naked eye.]",
+      "mean": 3.96,
+      "sd": 0.8071112509614591,
+      "agree_pct": 0.7,
+      "n": 50
+    },
+    "B2.3": {
+      "question": "B2. Please indicate how much you agree with each statement. [B2.3 Feedback on plyometric technique is usually given after the session rather than during it.]",
+      "mean": 3.9,
+      "sd": 0.8390957231764807,
+      "agree_pct": 0.72,
+      "n": 50
+    },
+    "B2.4": {
+      "question": "B2. Please indicate how much you agree with each statement. [B2.4 Feedback during a set would help prevent technique errors before they cause injury.]",
+      "mean": 4.02,
+      "sd": 0.7139999428342743,
+      "agree_pct": 0.76,
+      "n": 50
+    },
+    "C1": {
+      "question": "Perceived usefulness [C1 Using this tool would improve my performance in plyometric training.]",
+      "mean": 3.68,
+      "sd": 0.7677159338596802,
+      "agree_pct": 0.62,
+      "n": 50
+    },
+    "C2": {
+      "question": "Perceived usefulness [C2 Using this tool would enhance my effectiveness at correcting plyometric technique.]",
+      "mean": 3.7,
+      "sd": 0.8144110179279557,
+      "agree_pct": 0.6,
+      "n": 50
+    },
+    "C3": {
+      "question": "Perceived usefulness [C3 I would find this tool useful for my plyometric training.]",
+      "mean": 3.64,
+      "sd": 0.8270922757788645,
+      "agree_pct": 0.54,
+      "n": 50
+    },
+    "C4": {
+      "question": "Perceived ease of use [C4 Learning to use this tool would be easy for me.]",
+      "mean": 3.94,
+      "sd": 0.7398289929270887,
+      "agree_pct": 0.74,
+      "n": 50
+    },
+    "C5": {
+      "question": "Perceived ease of use [C5 I would find it easy to get this tool to do what I want it to do.]",
+      "mean": 3.8,
+      "sd": 0.7559289460184544,
+      "agree_pct": 0.68,
+      "n": 50
+    },
+    "C6": {
+      "question": "Perceived ease of use [C6 I would find this tool to be easy to use.]",
+      "mean": 3.92,
+      "sd": 0.7782764841072135,
+      "agree_pct": 0.7,
+      "n": 50
+    },
+    "C7": {
+      "question": "Trust in the tool's functionality [C7 This tool would work well for checking my posture during plyometric exercises.]",
+      "mean": 3.48,
+      "sd": 0.7623808036643619,
+      "agree_pct": 0.52,
+      "n": 50
+    },
+    "C8": {
+      "question": "Trust in the tool's functionality [C8 This tool would be competent at detecting posture errors.]",
+      "mean": 3.38,
+      "sd": 0.7529533687488251,
+      "agree_pct": 0.46,
+      "n": 50
+    },
+    "C9": {
+      "question": "Trust in the tool's functionality [C9 This tool would be reliable.]",
+      "mean": 3.44,
+      "sd": 0.8369039151929606,
+      "agree_pct": 0.48,
+      "n": 50
+    },
+    "C10": {
+      "question": "Intention to use [C10 I intend to use this tool in the future.]",
+      "mean": 3.4,
+      "sd": 0.8329931278350429,
+      "agree_pct": 0.42,
+      "n": 50
+    },
+    "C11": {
+      "question": "Intention to use [C11 I predict that I would use this tool.]",
+      "mean": 3.5,
+      "sd": 0.762648446573665,
+      "agree_pct": 0.46,
+      "n": 50
+    },
+    "C12": {
+      "question": "Intention to use [C12 Using this tool is something I would do in the future.]",
+      "mean": 3.42,
+      "sd": 0.7583548251421143,
+      "agree_pct": 0.46,
+      "n": 50
+    },
+    "C13": {
+      "question": "Trust in privacy and data protection [C13 I would trust that my privacy is protected when using this tool.]",
+      "mean": 2.88,
+      "sd": 0.9398219544799159,
+      "agree_pct": 0.24,
+      "n": 50
+    },
+    "C14": {
+      "question": "Trust in privacy and data protection [C14 I would trust that my personal data is protected from potential abuse when using this tool.]",
+      "mean": 2.9,
+      "sd": 1.0738068841694934,
+      "agree_pct": 0.28,
+      "n": 50
+    }
+  },
+  "constructs": {
+    "Perceived usefulness": {
+      "items": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "mean": 3.673333333333334,
+      "sd": 0.6981998232578399,
+      "alpha": 0.8378453809656713
+    },
+    "Perceived ease of use": {
+      "items": [
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "mean": 3.8866666666666663,
+      "sd": 0.5855787686819475,
+      "alpha": 0.6618172199444518
+    },
+    "Trust in functionality": {
+      "items": [
+        "C7",
+        "C8",
+        "C9"
+      ],
+      "mean": 3.4333333333333336,
+      "sd": 0.6842908506285674,
+      "alpha": 0.8420338983050848
+    },
+    "Intention to use": {
+      "items": [
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "mean": 3.44,
+      "sd": 0.6715467643353978,
+      "alpha": 0.8160699919549476
+    },
+    "Trust in privacy": {
+      "items": [
+        "C13",
+        "C14"
+      ],
+      "mean": 2.89,
+      "sd": 0.9545273432330745,
+      "alpha": 0.8825176391533207
+    }
+  },
+  "open": {
+    "E1": {
+      "question": "E1. Which plyometric exercise do you perform most often?",
+      "counts": {
+        "depth jump": 8,
+        "split squat jump": 7,
+        "broad jump": 6,
+        "drop jump": 4,
+        "squat jump": 4,
+        "skater jumps": 4,
+        "box jump": 4,
+        "single-leg hop": 3,
+        "tuck jump": 2,
+        "lateral bounds": 2
+      },
+      "n": 44
+    },
+    "E2": {
+      "question": "E2. What is the one feature this tool must have?",
+      "counts": {
+        "quick setup": 6,
+        "per-rep score": 6,
+        "export report for coach": 5,
+        "works offline on my phone": 5,
+        "simple one-tap start": 4,
+        "real-time knee alignment alerts": 4,
+        "multi-athlete view": 4,
+        "spoken cues so i don't watch the screen": 3,
+        "skeleton overlay": 3,
+        "accurate knee valgus detection": 3,
+        "rep counter": 2,
+        "audio cues": 1,
+        "session history and progress charts": 1,
+        "session history and progress chart": 1
+      },
+      "n": 48
+    },
+    "E3": {
+      "question": "E3. What would most likely stop you from using this tool?",
+      "counts": {
+        "poor accuracy": 10,
+        "bad lighting in gym": 7,
+        "camera angle problems": 6,
+        "setup time": 6,
+        "lag in feedback": 4,
+        "phone storage": 4,
+        "privacy concerns": 3,
+        "needs good internet": 2,
+        "distracting during sets": 2,
+        "not trusting ai feedback": 1,
+        "too many false alarms": 1
+      },
+      "n": 46
+    }
+  }
+}

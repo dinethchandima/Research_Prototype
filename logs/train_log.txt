@@ -1,0 +1,110 @@
+﻿=== Training started 15:01:34 ===
+=== 3-CLASS MODELS ===
+train: 90 clips, per class [43, 26, 21]
+val: 19 clips, per class [9, 6, 4]
+test: 17 clips, per class [9, 5, 3]
+Training A: ResNet50 ...
+  A epoch 1/12: loss 0.553  val macro F1 0.319
+  A epoch 2/12: loss 0.396  val macro F1 0.351
+  A epoch 3/12: loss 0.531  val macro F1 0.267
+  A epoch 4/12: loss 0.212  val macro F1 0.267
+  A epoch 5/12: loss 0.548  val macro F1 0.333
+  A epoch 6/12: loss 0.088  val macro F1 0.267
+  A epoch 7/12: loss 0.080  val macro F1 0.351
+  A epoch 8/12: loss 0.120  val macro F1 0.257
+  A epoch 9/12: loss 0.297  val macro F1 0.271
+  A epoch 10/12: loss 0.103  val macro F1 0.422
+  A epoch 11/12: loss 0.520  val macro F1 0.384
+  A epoch 12/12: loss 0.058  val macro F1 0.469
+Training B: CNN-Transformer ...
+  B epoch 25/150: loss 0.011  val macro F1 0.296  (best 0.405)
+  B epoch 50/150: loss 0.001  val macro F1 0.398  (best 0.442)
+  B epoch 75/150: loss 0.002  val macro F1 0.398  (best 0.442)
+  B epoch 100/150: loss 0.000  val macro F1 0.398  (best 0.442)
+  B epoch 125/150: loss 0.001  val macro F1 0.398  (best 0.442)
+  B epoch 150/150: loss 0.001  val macro F1 0.400  (best 0.442)
+  B best val macro F1 0.442
+Training C: XGBoost ...
+Exporting ONNX and timing ...
+Quantising to int8 and re-evaluating ...
+WARNING:root:Please consider to run pre-processing before quantization. Refer to example: https://github.com/microsoft/onnxruntime-inference-examples/blob/main/quantization/image_classification/cpu/ReadMe.md 
+WARNING:root:Please consider to run pre-processing before quantization. Refer to example: https://github.com/microsoft/onnxruntime-inference-examples/blob/main/quantization/image_classification/cpu/ReadMe.md 
+# Model comparison (3 classes)
+Test set: 17 clips from held-out groups (train 90, val 19). Class counts in test: [9, 5, 3] (correct_form, knee_valgus, trunk_lean).
+| Model | Accuracy | Macro F1 | Size (MB) | Latency (ms, CPU 1 thread) |
+|---|---|---|---|---|
+| A_ResNet50 | 0.647 | 0.627 | 94.0 | 83 |
+| B_CNN_Transformer | 0.176 | 0.162 | 96.1 | 659 |
+| C_XGBoost | 0.647 | 0.492 | 95.3 | 83 |
+| R_angle_rule | 0.588 | 0.351 | 0.0 | 0 |
+| A_ResNet50_int8 | 0.588 | 0.575 | 23.7 | 101 |
+| B_CNN_Transformer_int8 | 0.294 | 0.288 | 25.8 | 808 |
+| C_XGBoost_int8 | 0.647 | 0.492 | 25.0 | 102 |
+Targets: accuracy >= 0.9, macro F1 >= 0.85, latency <= 100 ms (in browser), size <= 50 MB.
+Latency here is ONNX Runtime on this PC's CPU with 1 thread; the browser figure is measured in the web app.
+_int8 rows are the quantised models the web app runs, evaluated on the same test clips.
+R_angle_rule is a reference only; its thresholds came from the pilot clips, which are part of this data.
+## McNemar's test (exact, test set)
+| Pair | only 1st correct | only 2nd correct | p |
+|---|---|---|---|
+| A_ResNet50 vs B_CNN_Transformer | 8 | 0 | 0.008 |
+| A_ResNet50 vs C_XGBoost | 4 | 4 | 1.000 |
+| B_CNN_Transformer vs C_XGBoost | 1 | 9 | 0.021 |
+| A_ResNet50_int8 vs B_CNN_Transformer_int8 | 6 | 1 | 0.125 |
+| A_ResNet50_int8 vs C_XGBoost_int8 | 4 | 5 | 1.000 |
+| B_CNN_Transformer_int8 vs C_XGBoost_int8 | 2 | 8 | 0.109 |
+=== 2-CLASS MODELS ===
+train: 90 clips, per class [43, 47]
+val: 19 clips, per class [9, 10]
+test: 17 clips, per class [9, 8]
+Training A: ResNet50 ...
+  A epoch 1/12: loss 0.281  val macro F1 0.627
+  A epoch 2/12: loss 0.308  val macro F1 0.345
+  A epoch 3/12: loss 0.204  val macro F1 0.424
+  A epoch 4/12: loss 0.173  val macro F1 0.548
+  A epoch 5/12: loss 0.028  val macro F1 0.789
+  A epoch 6/12: loss 0.244  val macro F1 0.725
+  A epoch 7/12: loss 0.274  val macro F1 0.683
+  A epoch 8/12: loss 0.034  val macro F1 0.474
+  A epoch 9/12: loss 0.304  val macro F1 0.513
+  A epoch 10/12: loss 0.005  val macro F1 0.614
+  A epoch 11/12: loss 0.012  val macro F1 0.548
+  A epoch 12/12: loss 0.147  val macro F1 0.683
+Training B: CNN-Transformer ...
+  B epoch 25/150: loss 0.016  val macro F1 0.552  (best 0.774)
+  B epoch 50/150: loss 0.002  val macro F1 0.708  (best 0.774)
+  B epoch 75/150: loss 0.000  val macro F1 0.708  (best 0.774)
+  B epoch 100/150: loss 0.000  val macro F1 0.708  (best 0.774)
+  B epoch 125/150: loss 0.000  val macro F1 0.708  (best 0.774)
+  B epoch 150/150: loss 0.000  val macro F1 0.708  (best 0.774)
+  B best val macro F1 0.774
+Training C: XGBoost ...
+Exporting ONNX and timing ...
+Quantising to int8 and re-evaluating ...
+WARNING:root:Please consider to run pre-processing before quantization. Refer to example: https://github.com/microsoft/onnxruntime-inference-examples/blob/main/quantization/image_classification/cpu/ReadMe.md 
+WARNING:root:Please consider to run pre-processing before quantization. Refer to example: https://github.com/microsoft/onnxruntime-inference-examples/blob/main/quantization/image_classification/cpu/ReadMe.md 
+# Model comparison (2 classes)
+Test set: 17 clips from held-out groups (train 90, val 19). Class counts in test: [9, 8] (correct_form, fault).
+| Model | Accuracy | Macro F1 | Size (MB) | Latency (ms, CPU 1 thread) |
+|---|---|---|---|---|
+| A_ResNet50 | 0.588 | 0.582 | 94.0 | 83 |
+| B_CNN_Transformer | 0.529 | 0.485 | 96.1 | 661 |
+| C_XGBoost | 0.647 | 0.614 | 94.9 | 84 |
+| R_angle_rule | 0.588 | 0.471 | 0.0 | 0 |
+| A_ResNet50_int8 | 0.588 | 0.582 | 23.7 | 101 |
+| B_CNN_Transformer_int8 | 0.471 | 0.395 | 25.8 | 813 |
+| C_XGBoost_int8 | 0.706 | 0.664 | 24.7 | 103 |
+Targets: accuracy >= 0.9, macro F1 >= 0.85, latency <= 100 ms (in browser), size <= 50 MB.
+Latency here is ONNX Runtime on this PC's CPU with 1 thread; the browser figure is measured in the web app.
+_int8 rows are the quantised models the web app runs, evaluated on the same test clips.
+R_angle_rule is a reference only; its thresholds came from the pilot clips, which are part of this data.
+## McNemar's test (exact, test set)
+| Pair | only 1st correct | only 2nd correct | p |
+|---|---|---|---|
+| A_ResNet50 vs B_CNN_Transformer | 3 | 2 | 1.000 |
+| A_ResNet50 vs C_XGBoost | 4 | 5 | 1.000 |
+| B_CNN_Transformer vs C_XGBoost | 5 | 7 | 0.774 |
+| A_ResNet50_int8 vs B_CNN_Transformer_int8 | 4 | 2 | 0.688 |
+| A_ResNet50_int8 vs C_XGBoost_int8 | 4 | 6 | 0.754 |
+| B_CNN_Transformer_int8 vs C_XGBoost_int8 | 5 | 9 | 0.424 |
+=== ALL DONE 15:14:57 ===
