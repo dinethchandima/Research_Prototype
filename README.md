@@ -100,3 +100,8 @@ lean), grouped by source video (34 groups).
 Video frames are processed only in the browser's memory. The session log stays on the device until the user
 downloads it as CSV; only user settings are stored in the browser's local storage. Spoken cues use on-device voices
 only.
+
+## Deployment (Vercel)
+
+The repository includes `vercel.json`: Vercel serves the `webapp/` folder as a static site (no build step) with the cross-origin isolation headers that let ONNX Runtime Web use several CPU threads. Import the GitHub repository at vercel.com, keep the default settings and deploy. The camera works only over HTTPS, which Vercel provides.
+
