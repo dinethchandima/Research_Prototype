@@ -9,6 +9,8 @@ import { Classifier, personBox, cropCanvas } from "./classifier.js?v=3";
 ort.env.wasm.wasmPaths = new URL("vendor/onnxruntime-web/", location.href).href;
 ort.env.wasm.numThreads = self.crossOriginIsolated ? Math.min(4, navigator.hardwareConcurrency || 1) : 1;
 
+// the model selected by 5-fold cross-validation: XGBoost on deep-learned features, 3 classes
+const MODEL = "C", CLASSES = 3;
 const T = 8, BUFFER = 60, MAX_W = 640, TRUNK_HINT = 6.0, FLASH_MS = 2600, SIDE_YAW = 45;
 // say = short spoken cue, so it ends before the next jump
 const CUES = {
@@ -40,15 +42,13 @@ function loadPrefs() {
 function savePrefs() {
   try {
     localStorage.setItem("lfc-prefs", JSON.stringify({
-      voice: $("voice").checked, details: $("details").checked, model: $("model").value, classes: $("classes").value,
+      voice: $("voice").checked, details: $("details").checked,
     }));
   } catch { /* storage blocked: settings just aren't remembered */ }
 }
 const prefs = loadPrefs();
 if (prefs.voice === false) $("voice").checked = false;
 if (prefs.details) $("details").checked = true;
-if (prefs.model) $("model").value = prefs.model;
-if (prefs.classes) $("classes").value = prefs.classes;
 document.body.classList.toggle("show-details", $("details").checked);
 $("cue-icon").innerHTML = ICONS.idle;
 
@@ -98,7 +98,7 @@ async function loadPose() {
 }
 
 async function loadClassifier() {
-  classifier = await Classifier.load($("model").value, Number($("classes").value));
+  classifier = await Classifier.load(MODEL, CLASSES);
 }
 
 async function start() {
@@ -329,7 +329,7 @@ function updateStats() {
 function addLog(entry) {
   entry.n = log.length + 1;
   entry.time = new Date().toLocaleTimeString();
-  entry.model = $("model").value + "/" + $("classes").value;
+  entry.model = MODEL + "/" + CLASSES;
   log.push(entry);
   downloaded = false;
   $("download").disabled = false;
@@ -421,10 +421,3 @@ document.addEventListener("keydown", e => { if (e.key === "Escape" && !settings.
 
 $("voice").onchange = savePrefs;
 $("details").onchange = () => { document.body.classList.toggle("show-details", $("details").checked); savePrefs(); };
-$("model").onchange = $("classes").onchange = async () => {
-  savePrefs();
-  if (!running) return;
-  status("Switching model…");
-  await loadClassifier();
-  status("Model switched. Keep jumping.");
-};

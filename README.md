@@ -28,8 +28,8 @@ The server sends cross-origin isolation headers, which let the model use several
 3. Jump and land on both feet. A cue appears and is spoken after every landing.
 4. **End session** shows a summary; **Download CSV** saves the landing log.
 
-The gear icon opens the settings: model (XGBoost is the selected model), feedback type (3 classes or good/fault),
-voice cues, and *Researcher details* (live angles, frames per second, model time, landing-to-cue time and the next
+The app always uses the model selected by cross-validation: XGBoost on deep-learned features, 3 classes.
+The gear icon opens the settings: voice cues and *Researcher details* (live angles, frames per second, model time, landing-to-cue time and the next
 take-off).
 
 ## 2. Install the Python environment (to reproduce the results)
